@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Simulate a script with deprecation warnings
-echo "This is a script with a DEPRECATION WARNING" >&2
+echo "This is a script with a DEPRECATION WARNING" >&1
 echo "Performing some tasks..."
 echo "Another DEPRECATION WARNING" >&2
 
