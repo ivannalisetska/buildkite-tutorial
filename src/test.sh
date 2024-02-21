@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Replace these values with your actual directory and file pattern
-pipelines_directory=".buildkite/pipeline.yml"
+pipelines_directory=".buildkite"
 file_pattern="*.yml"
 
 # Use a shell command to list the pipeline files with a specific pattern
