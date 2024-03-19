@@ -2,4 +2,9 @@ steps:
   - label: "Example Test"
     command: echo "Executing pipeline from hithub"
     agents:
+      queue: "default"
+steps:
+  - label: "Example Test"
+    command: echo "Executing pipeline from hithub"
+    agents:
       queue: "mac"
