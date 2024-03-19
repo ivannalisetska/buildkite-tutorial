@@ -1,5 +1,5 @@
 steps:
   - label: "Example Test"
-    command: echo "Hello!"
+    command: echo "Executing pipeline from hithub"
     agents:
       queue: "default"
