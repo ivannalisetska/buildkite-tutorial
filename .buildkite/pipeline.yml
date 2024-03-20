@@ -3,4 +3,4 @@ steps:
     command: echo "Executing pipeline from hithub"
     agents:
       queue: "mac"
-      cluster: "Default cluster"
+      cluster: "default-cluster"
