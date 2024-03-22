@@ -21,4 +21,16 @@ steps:
         algoritm: "PS512"
     agents:
       queue: "mac"
+
+  - label: "Check Quickstart File"
+    command: |
+      ls -la
+      echo "Check if $$QUICKSTART_FILE exists..."
+      if [ ! -f "$$QUICKSTART_FILE" ]; then
+          echo -e "\033[31m$$QUICKSTART_FILE does not exist\033[0m"
+          exit 1
+      fi
+    agents:
+      queue: "mac"
+
       
