@@ -36,7 +36,7 @@ steps:
     agents:
       queue: "mac"
   # Integration of new test scenarios
-   - label: "Test Dynamic Var Escaping with Double Dollar"
+  - label: "Test Dynamic Var Escaping with Double Dollar"
     commands:
       - "if [[ -z \"$$CONCURRENCY_GROUP\" ]]; then echo \"Error, $$CONCURRENCY_GROUP is empty. Please set this environment variable.\"; exit 1; fi"
       - "cat .buildkite/benchmarking.yml | sed 's/%concurrency_group%/$$CONCURRENCY_GROUP/' | buildkite-agent pipeline upload"
