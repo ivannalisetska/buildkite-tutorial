@@ -10,6 +10,8 @@ steps:
      signature: 
         value: "eyJhbGciOiJQUzUxMiIsImtpZCI6InByb2QifQ..XkPFgU-Pz3NM33cIjlgBZE5MgqTsb4LnII4gKhfHe417MC9LxpuBrVwng5ubzrQ2ot8CySYXKMtYEu0qKNjsQlWAMmGEG0JaYx9DhC3Nh3AqNxuV_bRknNlB0IrrWlnJmxBGTBTP1LbOU0b656CZ3vefmwPmbxHJCZZtK-jN2zAKyDU6370FShlR7QBC_exZTcMsGl8WG7i532LXGy3KswY4q08ZKJlyaRSEXUKYJaTi8o48a0ASF4cPDaRfmlGpIy5UJq-KzqUARIWBqhiUkQ_2PPO-WyP3_v8QpoCCMMLHTgwzkqQox6hm8_a9_dx1lhb8cI_SzERUkjSTAMow5Q"
         algoritm: "PS512"
+     agents:
+      queue: "mac"
 
   - label: "Single Line Command Test"
     command: "echo 'Testing single line' && echo 'This should work fine'"
