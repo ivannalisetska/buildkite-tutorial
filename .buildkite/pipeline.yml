@@ -36,36 +36,17 @@ steps:
     agents:
       queue: "mac"
   # Integration of new test scenarios
-  - label: "Test with Escaped Variable"
-    command: |
-      if [[ -z "$$CONCURRENCY_GROUP" ]]; then 
-        echo "Error, $$CONCURRENCY_GROUP is empty. Please set this environment variable."; 
-        exit 1;
-      fi
-      cat .buildkite/benchmarking.yml | sed s/%concurrency_group%/$$CONCURRENCY_GROUP/ | buildkite-agent pipeline upload
-    signature: 
-        value: "eyJhbGciOiJQUzUxMiIsImtpZCI6InByb2QifQ..XkPFgU-Pz3NM33cIjlgBZE5MgqTsb4LnII4gKhfHe417MC9LxpuBrVwng5ubzrQ2ot8CySYXKMtYEu0qKNjsQlWAMmGEG0JaYx9DhC3Nh3AqNxuV_bRknNlB0IrrWlnJmxBGTBTP1LbOU0b656CZ3vefmwPmbxHJCZZtK-jN2zAKyDU6370FShlR7QBC_exZTcMsGl8WG7i532LXGy3KswY4q08ZKJlyaRSEXUKYJaTi8o48a0ASF4cPDaRfmlGpIy5UJq-KzqUARIWBqhiUkQ_2PPO-WyP3_v8QpoCCMMLHTgwzkqQox6hm8_a9_dx1lhb8cI_SzERUkjSTAMow5Q"
-        algoritm: "PS512"
-    agents:
-      queue: "mac"
-
-  - label: "Test with Unescaped Variable"
-    command: |
-      if [[ -z "$CONCURRENCY_GROUP" ]]; then 
-        echo "Error, $CONCURRENCY_GROUP is empty. Please set this environment variable."; 
-        exit 1;
-      fi
-      cat .buildkite/benchmarking.yml | sed s/%concurrency_group%/$CONCURRENCY_GROUP/ | buildkite-agent pipeline upload
-    signature: 
-        value: "eyJhbGciOiJQUzUxMiIsImtpZCI6InByb2QifQ..XkPFgU-Pz3NM33cIjlgBZE5MgqTsb4LnII4gKhfHe417MC9LxpuBrVwng5ubzrQ2ot8CySYXKMtYEu0qKNjsQlWAMmGEG0JaYx9DhC3Nh3AqNxuV_bRknNlB0IrrWlnJmxBGTBTP1LbOU0b656CZ3vefmwPmbxHJCZZtK-jN2zAKyDU6370FShlR7QBC_exZTcMsGl8WG7i532LXGy3KswY4q08ZKJlyaRSEXUKYJaTi8o48a0ASF4cPDaRfmlGpIy5UJq-KzqUARIWBqhiUkQ_2PPO-WyP3_v8QpoCCMMLHTgwzkqQox6hm8_a9_dx1lhb8cI_SzERUkjSTAMow5Q"
-        algoritm: "PS512"
-    agents:
-      queue: "mac"
-
-  - label: "Direct Command Execution Test"
+   - label: "Test Dynamic Var Escaping with Double Dollar"
     commands:
       - "if [[ -z \"$$CONCURRENCY_GROUP\" ]]; then echo \"Error, $$CONCURRENCY_GROUP is empty. Please set this environment variable.\"; exit 1; fi"
-      - "cat .buildkite/benchmarking.yml | sed s/%concurrency_group%/$$CONCURRENCY_GROUP/ | buildkite-agent pipeline upload"
+      - "cat .buildkite/benchmarking.yml | sed 's/%concurrency_group%/$$CONCURRENCY_GROUP/' | buildkite-agent pipeline upload"
+    agents:
+      queue: "mac"
+
+  - label: "Test Dynamic Var Escaping with Single Dollar"
+    commands:
+      - "if [[ -z \"$CONCURRENCY_GROUP\" ]]; then echo \"Error, $CONCURRENCY_GROUP is empty. Please set this environment variable.\"; exit 1; fi"
+      - "cat .buildkite/benchmarking.yml | sed 's/%concurrency_group%/$CONCURRENCY_GROUP/' | buildkite-agent pipeline upload"
     agents:
       queue: "mac"
 
