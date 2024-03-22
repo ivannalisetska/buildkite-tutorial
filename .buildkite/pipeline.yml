@@ -1,4 +1,5 @@
 env: 
+ CONCURRENCY_GROUP: "${CONCURRENCY_GROUP:-test_group}"
  QUICKSTART_FILE: "deprecation.sh"
 steps:
   - label: "Multiline Command Test"
