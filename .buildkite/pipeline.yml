@@ -1,3 +1,5 @@
+env: 
+ QUICKSTART_FILE: "deprecation.sh"
 steps:
   - label: "Multiline Command Test"
     command: |
