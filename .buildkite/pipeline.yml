@@ -1,6 +1,7 @@
 steps:
   - label: "Multiline Command Test"
-    command: echo "Testing multiple commands"
+    command: |
+      echo "Testing multiple commands"
       echo "This is a multiline script"
       if [ -z "$BUILDKITE_AGENT_META_DATA_QUEUE" ]; then
         echo "Environment variable is not set"
