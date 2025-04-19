@@ -12,16 +12,16 @@ steps:
         echo "Environment variable is set"
       fi
     signature: 
-        value: "eyJhbGciOiJQUzUxMiIsImtpZCI6InByb2QifQ..jrZTHomIqTYUzbxBebAZ9qOI1wZE1PdFA2vPRdZN6a22SxKPHsHcWLhY_blP1z3vA24l71LSD3Az0qu87ZtiyC0j3n4s8nwyjNjQGxYKNk2W2YXAWnqT_65XcjKsLJs8tKGtDYumlkXUdEUknsbcjHwW-arGXsZsDOa64fHnmdxui-epkeQOA875hDO5811K4hIl1SYvzzMeERnuZwoL5BNJ5jxrOYvEsJOdG78Gf9QxdaCpA4lYJdeMyrHesN_yypsIbUCJjLNlzXYQjn2ckS-HSq1xcLfvzLjc7zC753X1yUYM5uVK9zX_hKE701zPHrC87TQobB8GpLGrCoYLOw"
-        algoritm: "PS512"
+        value: "eyJhbGciOiJFZERTQSIsImtpZCI6InBsZWFzZWQtYmx1ZWJpcmQifQ..TZ06iVLSlYeRMChGCOo2NGL0ElSy9oV-ysaq3sXFJzt37EuswAnX72le838dg0wpkKDec38SKJljqbjhuf7fCg"
+        algoritm: "EdDSA"
     agents:
       queue: "mac"
 
   - label: "Single Line Command Test"
     command: "echo 'Testing single line' && echo 'This should work fine'"
     signature: 
-        value: "eyJhbGciOiJQUzUxMiIsImtpZCI6InByb2QifQ..jrZTHomIqTYUzbxBebAZ9qOI1wZE1PdFA2vPRdZN6a22SxKPHsHcWLhY_blP1z3vA24l71LSD3Az0qu87ZtiyC0j3n4s8nwyjNjQGxYKNk2W2YXAWnqT_65XcjKsLJs8tKGtDYumlkXUdEUknsbcjHwW-arGXsZsDOa64fHnmdxui-epkeQOA875hDO5811K4hIl1SYvzzMeERnuZwoL5BNJ5jxrOYvEsJOdG78Gf9QxdaCpA4lYJdeMyrHesN_yypsIbUCJjLNlzXYQjn2ckS-HSq1xcLfvzLjc7zC753X1yUYM5uVK9zX_hKE701zPHrC87TQobB8GpLGrCoYLOw"
-        algoritm: "PS512"
+        value: "eyJhbGciOiJFZERTQSIsImtpZCI6InBsZWFzZWQtYmx1ZWJpcmQifQ..TZ06iVLSlYeRMChGCOo2NGL0ElSy9oV-ysaq3sXFJzt37EuswAnX72le838dg0wpkKDec38SKJljqbjhuf7fCg"
+        algoritm: "EdDSA"
     agents:
       queue: "mac"
 
